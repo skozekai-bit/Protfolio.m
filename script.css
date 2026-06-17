@@ -1,0 +1,292 @@
+/* ==========================================
+   1. BASE ADJUSTMENTS
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Montserrat:wght@900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e5b129; /* Authentic golden yellow background matching your snapshot */
+    font-family: 'Courier Prime', monospace;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.portfolio-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* ==========================================
+   2. HERO GRID & COMIC STRIP
+   ========================================== */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.comic-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-left: 3px solid #000000;
+    padding-left: 4px;
+}
+
+.comic-frame {
+    background: #eaeaea;
+    border-radius: 24px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+#frame-1 {
+    background: #ffffff;
+}
+
+.frame-number {
+    position: absolute;
+    bottom: 8px;
+    left: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0 6px;
+    border-radius: 4px;
+}
+
+.frame-content {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.upload-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #555;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.8);
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
+
+.frame-content:hover .upload-placeholder {
+    opacity: 1;
+}
+
+.upload-placeholder p {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.upload-placeholder span {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   3. BIG BOLD TYPOGRAPHY
+   ========================================== */
+.hero-text-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+.main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    color: #000000;
+    text-transform: lowercase;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    font-family: 'Courier Prime', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   4. CINEMA TICKET CARDS
+   ========================================== */
+.tickets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ticket-card {
+    background: #f4eee1; 
+    border-radius: 28px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    overflow: hidden;
+    height: 190px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.ticket-left {
+    background: #b5aba0; 
+    border-right: 4px solid #000000;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ticket-placeholder-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.ticket-left:hover .ticket-placeholder-text {
+    opacity: 1;
+}
+
+.ticket-right {
+    padding: 20px 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #173822; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.ticket-subheading {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.ticket-details {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.ticket-details a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.ticket-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.barcode {
+    font-size: 14px;
+    letter-spacing: 0px;
+    font-family: Arial, sans-serif;
+    opacity: 0.8;
+    user-select: none;
+    font-weight: bold;
+}
+
+.ticket-punch {
+    width: 45px;
+    height: 25px;
+    background-color: #e5b129; 
+    border-radius: 12px 12px 0 0;
+    position: absolute;
+    bottom: 35px;
+    right: -22px;
+    transform: rotate(-90deg);
+}
+
+/* Base Image Formatting */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/* ==========================================
+   5. RESPONSIVENESS
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-title {
+        font-size: 52px;
+    }
+    .ticket-card {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .ticket-left {
+        height: 180px;
+        border-right: none;
+        border-bottom: 4px solid #000;
+    }
+    .ticket-punch {
+        display: none;
+    }
+}
+
